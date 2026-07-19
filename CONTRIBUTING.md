@@ -22,10 +22,23 @@ disciplina profesional para que el producto escale con calidad.
 5. **Determinismo.** Mismas entradas ⇒ mismas salidas (salvo timestamps).
 6. **Todo cambio relevante se anota en `CHANGELOG.md`.**
 
+## Principios de ingeniería (brújula técnica)
+- Configuración antes que código.
+- Determinismo.
+- Idempotencia.
+- Compatibilidad hacia atrás.
+- Cambios aditivos primero.
+- Ningún módulo sin pruebas.
+- El Core nunca conoce a los plugins.
+- El Core nunca modifica `config/`.
+- El dominio nunca depende de la implementación.
+- El Core es agnóstico al control de versiones (no invoca git).
+
 ## Documentos oficiales
 | Documento | Propósito |
 |---|---|
 | `README.md` | Cómo usar APO. |
 | `ARCHITECTURE.md` | Cómo está diseñado (RFC interna). |
-| `CHANGELOG.md` | Qué cambió, por versión. |
+| `DECISIONS.md` | Registro de decisiones (ADR): por qué se decidió cada cosa. |
+| `CHANGELOG.md` | Qué cambió, por versión (Keep a Changelog + SemVer). |
 | `CONTRIBUTING.md` | Cómo contribuir (este documento). |

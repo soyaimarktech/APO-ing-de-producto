@@ -15,8 +15,9 @@
 2. **El motor pregunta al Schema; nunca supone.** `config → schema → validate → core`.
 3. **`config/` es de solo lectura para APO.** Todo lo generado va a `state/`, `reports/`, `logs/`.
 4. **Contenido ≠ Configuración ≠ Motor.** El motor no contiene datos de ningún cliente.
-5. **GitHub versiona; no es base de datos.** APO solo lee archivos locales; no consulta Issues,
-   Commits ni PRs. Así funciona igual con GitHub, GitLab o Azure DevOps.
+5. **GitHub versiona; no es base de datos.** APO solo lee archivos locales; **el Core no invoca git**
+   ni consulta Issues, Commits ni PRs (agnóstico al VCS). Así funciona igual con GitHub, GitLab o
+   Azure DevOps.
 6. **Ante la duda, reportar y no tocar.**
 7. **Compatibilidad hacia atrás:** cambios de formato se manejan con `schemaVersion` + migraciones.
 8. **Determinismo:** mismas configs + archivos + parámetros ⇒ mismo resultado (manifest, index,

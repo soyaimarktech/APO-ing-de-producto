@@ -44,10 +44,13 @@ APO/  (raíz de este repositorio)
 ├── core/                           # núcleo Python de APO (ChatGPT)
 ├── launcher/                       # lanzador PowerShell (ChatGPT)
 ├── plugins/                        # (v0.3.0) integraciones vía eventos
-└── tests/                          # unit / integration / regression
+├── tests/                          # unit / integration / regression
+├── docs/                           # documentación adicional (diagramas, roadmap)
+└── examples/                       # configs de ejemplo (sin cliente real)
 ```
 
 > Arquitectura completa (principios, flujo, eventos, versionado, roadmap): ver **`ARCHITECTURE.md`**.
+> Decisiones (ADR): ver **`DECISIONS.md`**.
 
 ---
 

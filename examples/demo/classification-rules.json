@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "matchOptions": { "caseInsensitive": true, "accentInsensitive": true },
+  "rules": [
+    {
+      "id": "sin-clasificar",
+      "description": "Regla de respaldo: si nada coincide, reportar y no tocar.",
+      "match": { "type": "any" },
+      "destination": null,
+      "priority": 1000
+    }
+  ]
+}
