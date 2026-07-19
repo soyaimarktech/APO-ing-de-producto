@@ -73,3 +73,23 @@ Decisiones de implementación, propiedad del **Arquitecto Técnico** (no afectan
   del código para que cada área crezca sin archivos enormes. Mejoras estructurales futuras van al
   backlog de una versión mayor (0.2.0 / 1.0.0), no interrumpen el desarrollo en curso.
 - **Estado:** Aceptada (Arquitecto Técnico).
+
+
+## DT-003 · `ProjectConfig` es el agregado del proyecto (no un archivo)
+- **Contexto:** observaciones de dominio del PR #002 (la config son 5 archivos; `name` debe venir del
+  campo `name`; `schemaVersion` es entero).
+- **Decisión:** `ProjectConfig` deja de representar un archivo y pasa a ser el **agregado**:
+  `ProjectMetadata` + `StructureConfig` + `FileMapConfig` + `ReadmeConfig` + `ClassificationRules`.
+  `name` proviene del campo `name` de `project.json`; `schemaVersion` se maneja como `int`.
+- **Consecuencias:** el Core se acerca al dominio. La **API pública no cambia**: `ConfigLoader.load()`
+  sigue devolviendo `ProjectConfig`.
+- **Estado:** Aceptada (Arquitecto Técnico). Origen: revisión de dominio (Claude) en PR #002.
+
+## DT-004 · `ConfigLoader.load()` recibe la carpeta del cliente
+- **Contexto:** el dominio distribuye la configuración en una carpeta `config/<cliente>/`.
+- **Decisión:** `load()` recibe la **carpeta** (p. ej. `config/alicia-arouesty/`) y carga
+  automáticamente los archivos del proyecto. APO lee **proyectos**, no archivos aislados.
+- **Estado:** Aceptada (Arquitecto Técnico).
+
+> Nota de gobernanza (menor): TD-001 usó prefijo `TD` y estas usan `DT`. Sugiero unificar el prefijo
+> (TD o DT) y confirmar si existe un `DT-002`. Lo dejo a criterio del Arquitecto Técnico.

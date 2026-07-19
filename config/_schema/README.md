@@ -54,3 +54,30 @@ Severidades sugeridas: reglas 1–4, 6, 7 = **error**; reglas 5, 8 = **advertenc
 `state/<cliente>/manifest.json` y `state/<cliente>/index.json` son **salida** (no llevan schema de
 entrada). Se recomienda que el motor les ponga su propio `schemaVersion` y un `generatedAt` ISO-8601,
 y que **nunca** se editen a mano.
+
+
+---
+
+## Project Aggregate ↔ contrato (para DT-003 / DT-004)
+
+Al cargar `config/<cliente>/`, el `ConfigLoader` construye un `ProjectConfig` (agregado) a partir de
+**archivos con nombre fijo**. Mapeo autoritativo:
+
+| Modelo del agregado | Archivo | Claves de nivel superior |
+|---|---|---|
+| `ProjectMetadata` | `project.json` | `schemaVersion` (int), `name` (str, **nombre de negocio**), `rootFolderName`, `clientFolder`, `internalFolder` |
+| `StructureConfig` | `structure.json` | `schemaVersion`, `tree` (objeto recursivo) |
+| `ReadmeConfig` | `readmes.json` | `schemaVersion`, `readmes` (ruta relativa → texto) |
+| `FileMapConfig` | `file-map.json` | `schemaVersion`, `files` (nombre de archivo → `{destination, onConflict?, id?}`) |
+| `ClassificationRules` | `classification-rules.json` | `schemaVersion`, `matchOptions?`, `rules[]` |
+
+### Archivos obligatorios vs opcionales (decisión de dominio)
+- **Obligatorios:** `project.json` y `structure.json`. Si falta alguno → `ConfigurationError`.
+- **Opcionales** (con comportamiento por defecto si faltan):
+  - `readmes.json` ausente → no se generan LEEME (aunque se pida `-WithReadme`, se advierte).
+  - `file-map.json` ausente → sin mapeos exactos; la clasificación usa solo reglas + difusa.
+  - `classification-rules.json` ausente → por defecto "sin clasificar" (todo va a pendientes/reporte).
+- **Archivo desconocido** en la carpeta del cliente → **advertencia** (se ignora), no error.
+
+> Estas son reglas de dominio (custodia funcional). La implementación del Aggregate/Loader queda del
+> lado técnico; si algo aquí necesitara cambiar, se reporta y lo ajusto en el dominio.
