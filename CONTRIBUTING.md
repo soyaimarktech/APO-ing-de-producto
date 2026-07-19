@@ -22,6 +22,14 @@ disciplina profesional para que el producto escale con calidad.
 5. **Determinismo.** Mismas entradas ⇒ mismas salidas (salvo timestamps).
 6. **Todo cambio relevante se anota en `CHANGELOG.md`.**
 
+### Regla de custodia (quién NO toca qué)
+- **Claude no modifica el `core/` por iniciativa propia.** Revisa, observa y puede señalar
+  "esto rompe el contrato", pero no rediseña la implementación.
+- **ChatGPT no modifica el dominio por iniciativa propia.** Si un JSON o un contrato necesita
+  cambiar, lo **reporta**; Claude decide si procede el cambio de dominio.
+- **José decide la prioridad del producto.** Ante varias opciones válidas, define qué aporta más
+  valor en este momento.
+
 ## Principios de ingeniería (brújula técnica)
 - Configuración antes que código.
 - Determinismo.
