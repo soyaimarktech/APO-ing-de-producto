@@ -42,9 +42,9 @@
 
 ```
 APO/
-├── core/          # núcleo Python (API interna; NADA fuera del Core toca el FS):
-│                  #   config, filesystem, inventory, classifier, validator,
-│                  #   migration, events, reports, logger, manifest, index, cli
+├── core/          # núcleo Python por PAQUETES (layout técnico · TD-001):
+│                  #   config/ · validation/ · filesystem/ · reporting/ · shared/ · cli/
+│                  #   (responsabilidades = las del dominio; detalle interno lo define el Arq. Técnico)
 ├── launcher/      # lanzador PowerShell (invoca el core en Windows)
 ├── config/        # INPUT humano (verdad, versionado)
 │   ├── _schema/   #   JSON Schemas (dominio · Claude)
@@ -53,8 +53,13 @@ APO/
 ├── reports/       # OUTPUT (CSV siempre; XLSX/Word opcional; bitacora.md)
 ├── logs/          # OUTPUT técnico por corrida
 ├── plugins/       # (v0.3.0) integraciones vía eventos (drive, github, dashboard)
-└── tests/         # unit / integration / regression
+├── tests/         # unit / integration / regression
+├── docs/          # documentación adicional
+└── examples/      # configs de ejemplo (sin cliente real)
 ```
+
+> Archivos de proyecto en la raíz: `pyproject.toml`, `requirements.txt`, `VERSION`, `LICENSE` y los
+> documentos (`README` · `ARCHITECTURE` · `DECISIONS` · `CHANGELOG` · `CONTRIBUTING`).
 
 ---
 

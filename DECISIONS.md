@@ -58,3 +58,18 @@ Formato: Contexto · Decisión · Consecuencias · Estado.
 - **Decisión:** Claude = Arquitecto Funcional (dominio/config/contratos) · ChatGPT = Arquitecto Técnico
   (core/tests/evolución) · José (AIMARKTECH) = visión de negocio.
 - **Estado:** Aceptada.
+
+---
+
+# Decisiones técnicas (TD)
+
+Decisiones de implementación, propiedad del **Arquitecto Técnico** (no afectan el dominio).
+
+## TD-001 · Organización del Core por paquetes
+- **Contexto:** definir la organización interna del código del Core antes de escribir el primer módulo.
+- **Decisión:** `core/` se organiza **por paquetes** (`config/`, `validation/`, `filesystem/`,
+  `reporting/`, `shared/`, `cli/`), no por archivos planos. **Congelada para la serie 0.1.x.**
+- **Consecuencias:** no cambia el dominio, los contratos ni las responsabilidades; solo la organización
+  del código para que cada área crezca sin archivos enormes. Mejoras estructurales futuras van al
+  backlog de una versión mayor (0.2.0 / 1.0.0), no interrumpen el desarrollo en curso.
+- **Estado:** Aceptada (Arquitecto Técnico).
