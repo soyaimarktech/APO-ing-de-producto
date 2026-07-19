@@ -1,0 +1,16 @@
+{
+  "_draft": "JSON Schema draft-07",
+  "_id": "apo/project.schema.json",
+  "title": "APO · project.json",
+  "type": "object",
+  "required": ["schemaVersion", "name", "rootFolderName", "clientFolder", "internalFolder"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "_nota": { "type": "string" },
+    "name": { "type": "string", "minLength": 1 },
+    "rootFolderName": { "type": "string", "minLength": 1, "pattern": "^[^\\\\/:*?\"<>|]+$" },
+    "clientFolder": { "type": "string", "minLength": 1, "pattern": "^[^\\\\/:*?\"<>|]+$" },
+    "internalFolder": { "type": "string", "minLength": 1, "pattern": "^[^\\\\/:*?\"<>|]+$" }
+  }
+}

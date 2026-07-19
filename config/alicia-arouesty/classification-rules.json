@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "_nota": "Reglas del clasificador DESACOPLADO. El motor evalúa en este orden: (1) file-map.json (coincidencia exacta por nombre), (2) estas reglas por patrón (se elige la de menor 'priority' que cumpla), (3) sugerencia difusa (solo reporta). El emparejamiento debe ser CASE-INSENSITIVE y ACCENT-INSENSITIVE (normalizar antes de comparar). 'destination' es ruta relativa a la carpeta madre; null = no clasificar, solo reportar.",
+  "matchOptions": {
+    "caseInsensitive": true,
+    "accentInsensitive": true
+  },
+  "rules": [
+    {
+      "id": "legal",
+      "description": "Documentos legales (Aviso de Privacidad / Términos).",
+      "match": { "type": "glob", "patterns": ["*aviso*", "*terminos*"] },
+      "destination": "INTERNO (AIMARKTECH)/06 Cumplimiento y legal",
+      "priority": 10
+    },
+    {
+      "id": "guia-pdf",
+      "description": "La guía lead-magnet en PDF (entregable del cliente).",
+      "match": { "type": "glob", "patterns": ["*guia*senales*.pdf", "*7-senales*.pdf"] },
+      "destination": "CLIENTE (Alicia)/03 Tu guía gratuita",
+      "priority": 20
+    },
+    {
+      "id": "email-marketing",
+      "description": "Secuencias y config de correo.",
+      "match": { "type": "glob", "patterns": ["*secuencia*email*", "*email*secuencia*", "*brevo*"] },
+      "destination": "INTERNO (AIMARKTECH)/05 Email marketing",
+      "priority": 30
+    },
+    {
+      "id": "ventas",
+      "description": "Guiones de venta / objeciones / tarjeta de bolsillo.",
+      "match": { "type": "glob", "patterns": ["*guion*", "*objeciones*", "*tarjeta-de-bolsillo*"] },
+      "destination": "INTERNO (AIMARKTECH)/03 Ventas",
+      "priority": 30
+    },
+    {
+      "id": "contenidos-retos",
+      "description": "Retos y contenidos para el cliente.",
+      "match": { "type": "glob", "patterns": ["*reto*", "*retos*"] },
+      "destination": "CLIENTE (Alicia)/04 Contenidos y retos",
+      "priority": 40
+    },
+    {
+      "id": "cliente-generico",
+      "description": "Entregables explícitamente marcados CLIENTE que no cayeron en una regla más específica.",
+      "match": { "type": "glob", "patterns": ["*-cliente.*", "*cliente*.docx", "*cliente*.pdf"] },
+      "destination": "CLIENTE (Alicia)/01 Empieza aquí",
+      "priority": 60
+    },
+    {
+      "id": "interno-generico",
+      "description": "Entregables marcados INTERNO sin regla específica.",
+      "match": { "type": "glob", "patterns": ["*-interno.*", "*interno*.docx"] },
+      "destination": "INTERNO (AIMARKTECH)/02 Seguimiento",
+      "priority": 70
+    },
+    {
+      "id": "sin-clasificar",
+      "description": "Si nada coincide: NO clasificar automáticamente, solo reportar como pendiente.",
+      "match": { "type": "any" },
+      "destination": null,
+      "priority": 1000
+    }
+  ]
+}

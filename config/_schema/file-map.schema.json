@@ -1,0 +1,25 @@
+{
+  "_draft": "JSON Schema draft-07",
+  "_id": "apo/file-map.schema.json",
+  "title": "APO · file-map.json",
+  "type": "object",
+  "required": ["schemaVersion", "files"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "_nota": { "type": "string" },
+    "files": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["destination"],
+        "additionalProperties": false,
+        "properties": {
+          "destination": { "type": "string", "minLength": 1 },
+          "onConflict": { "type": "string", "enum": ["skip", "overwrite", "rename", "hash"] },
+          "id": { "type": "string" }
+        }
+      }
+    }
+  }
+}

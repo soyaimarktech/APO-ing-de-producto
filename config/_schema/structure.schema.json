@@ -1,0 +1,20 @@
+{
+  "_draft": "JSON Schema draft-07",
+  "_id": "apo/structure.schema.json",
+  "title": "APO · structure.json",
+  "type": "object",
+  "required": ["schemaVersion", "tree"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "_nota": { "type": "string" },
+    "tree": { "$ref": "#/definitions/folderMap" }
+  },
+  "definitions": {
+    "folderMap": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[^\\\\/:*?\"<>|]+$", "minLength": 1, "maxLength": 100 },
+      "additionalProperties": { "$ref": "#/definitions/folderMap" }
+    }
+  }
+}

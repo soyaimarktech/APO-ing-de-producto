@@ -1,0 +1,17 @@
+{
+  "_draft": "JSON Schema draft-07",
+  "_id": "apo/readmes.schema.json",
+  "title": "APO · readmes.json",
+  "type": "object",
+  "required": ["schemaVersion", "readmes"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "_nota": { "type": "string" },
+    "readmes": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    }
+  }
+}

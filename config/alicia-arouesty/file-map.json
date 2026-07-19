@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "_nota": "clave = nombre exacto del archivo de origen; destination = ruta relativa a la carpeta madre. onConflict por archivo es opcional; si falta, se usa la política global del programa (skip por defecto).",
+  "files": {
+    "Avance-Alicia-Arouesty-CLIENTE.docx":            { "destination": "CLIENTE (Alicia)/01 Empieza aquí" },
+    "Plan-90-dias-Alicia-Arouesty-CLIENTE.docx":      { "destination": "CLIENTE (Alicia)/01 Empieza aquí" },
+    "guia-7-senales-alicia-arouesty.pdf":             { "destination": "CLIENTE (Alicia)/03 Tu guía gratuita" },
+    "Reto-7-dias-Alicia-Arouesty.docx":               { "destination": "CLIENTE (Alicia)/04 Contenidos y retos" },
+    "Retos-Mensuales-Alicia-Arouesty.docx":           { "destination": "CLIENTE (Alicia)/04 Contenidos y retos" },
+    "Documento-Rector-Marca-Alicia-Arouesty-INTERNO.docx": { "destination": "INTERNO (AIMARKTECH)/01 Estrategia y diagnóstico" },
+    "Plan-90-dias-Alicia-Arouesty-INTERNO.docx":      { "destination": "INTERNO (AIMARKTECH)/01 Estrategia y diagnóstico" },
+    "Workbook-Blueprint-01-Alicia-Arouesty-v2.docx":  { "destination": "INTERNO (AIMARKTECH)/01 Estrategia y diagnóstico" },
+    "Hoja-de-Avances-Alicia-Arouesty.docx":           { "destination": "INTERNO (AIMARKTECH)/02 Seguimiento" },
+    "Estado-Avance-90dias-Alicia-Arouesty-INTERNO.docx": { "destination": "INTERNO (AIMARKTECH)/02 Seguimiento" },
+    "Indice-Carpetas-Drive-Alicia-Arouesty-INTERNO.docx": { "destination": "INTERNO (AIMARKTECH)/02 Seguimiento" },
+    "Guiones-de-Venta-Alicia-Arouesty-INTERNO.docx":  { "destination": "INTERNO (AIMARKTECH)/03 Ventas" },
+    "Tarjeta-de-Bolsillo-Alicia-Arouesty.docx":       { "destination": "INTERNO (AIMARKTECH)/03 Ventas" },
+    "Secuencia-7-emails-Alicia-Arouesty.docx":        { "destination": "INTERNO (AIMARKTECH)/05 Email marketing" },
+    "0 Aviso de privacidad Integral.docx":            { "destination": "INTERNO (AIMARKTECH)/06 Cumplimiento y legal" },
+    "2 Terminos y condiciones.docx":                  { "destination": "INTERNO (AIMARKTECH)/06 Cumplimiento y legal" }
+  }
+}

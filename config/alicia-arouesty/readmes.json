@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "_nota": "Las claves son RUTAS RELATIVAS (no solo el nombre de la carpeta) para evitar colisiones entre carpetas con nombres parecidos.",
+  "readmes": {
+    "CLIENTE (Alicia)": "Materiales de tu proyecto de marca digital: tu avance, tu marca, tu guía, tus contenidos e instructivos.",
+    "CLIENTE (Alicia)/01 Empieza aquí": "Comienza aquí: resumen de lo logrado y del plan de trabajo.",
+    "CLIENTE (Alicia)/02 Tu marca": "Tu logo, colores, tipografía y guía de uso de marca.",
+    "CLIENTE (Alicia)/03 Tu guía gratuita": "El PDF de las 7 señales que descargan tus clientes.",
+    "CLIENTE (Alicia)/04 Contenidos y retos": "Reto de 7 días, retos mensuales, ideas de publicaciones y tu texto de LinkedIn.",
+    "CLIENTE (Alicia)/05 Instructivos (paso a paso)": "Guías cortas: agenda en Google Calendar, accesos, revisión de correos.",
+    "CLIENTE (Alicia)/06 Tus accesos": "Dónde vive cada cosa (dominio, correo, sitio). Sin contraseñas.",
+    "INTERNO (AIMARKTECH)": "Uso exclusivo del consultor. Metodología, fuentes y accesos. No compartir con el cliente.",
+    "INTERNO (AIMARKTECH)/01 Estrategia y diagnóstico": "Diagnóstico, Documento Rector de Marca, Plan 90 días y Workbook.",
+    "INTERNO (AIMARKTECH)/02 Seguimiento": "Hoja de avances interna (fuente de verdad) y bitácora de decisiones.",
+    "INTERNO (AIMARKTECH)/03 Ventas": "Guiones de llamada, guion de objeciones y tarjeta de bolsillo.",
+    "INTERNO (AIMARKTECH)/04 Sitio web": "Respaldo/notas del sitio: SEO, dominio, caché y accesos técnicos.",
+    "INTERNO (AIMARKTECH)/05 Email marketing": "Secuencia de 7 correos (fuente) y configuración de Brevo.",
+    "INTERNO (AIMARKTECH)/06 Cumplimiento y legal": "Reglas CNSF y fuentes de Aviso/Términos.",
+    "INTERNO (AIMARKTECH)/07 Recursos de marca (fuente)": "Logos en alta/editables, imágenes y plantillas."
+  }
+}

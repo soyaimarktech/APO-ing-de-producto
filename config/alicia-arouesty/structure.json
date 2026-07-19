@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "tree": {
+    "CLIENTE (Alicia)": {
+      "01 Empieza aquí": {},
+      "02 Tu marca": {},
+      "03 Tu guía gratuita": {},
+      "04 Contenidos y retos": {},
+      "05 Instructivos (paso a paso)": {},
+      "06 Tus accesos": {}
+    },
+    "INTERNO (AIMARKTECH)": {
+      "01 Estrategia y diagnóstico": {},
+      "02 Seguimiento": {},
+      "03 Ventas": {},
+      "04 Sitio web": {},
+      "05 Email marketing": {},
+      "06 Cumplimiento y legal": {},
+      "07 Recursos de marca (fuente)": {}
+    }
+  }
+}

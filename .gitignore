@@ -1,0 +1,20 @@
+# APO — salidas generadas (regenerables): conservar carpeta, no su contenido
+/state/**
+/reports/**
+/logs/**
+!/state/.gitkeep
+!/reports/.gitkeep
+!/logs/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# OS / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
